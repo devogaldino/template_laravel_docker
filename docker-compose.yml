@@ -27,15 +27,26 @@ services:
         networks:
             - laravel
 
+    # phpmyadmin
+    phpmyadmin:
+        image: phpmyadmin:latest
+        restart: unless-stopped
+        ports:
+            - "9000:80"
+        environment:
+            - PMA_ARBITRARY=1
+        networks:
+            - laravel
+
     # db mysql
     db:
         image: mysql:5.7.22
         restart: unless-stopped
         environment:
-            MYSQL_DATABASE: ${DB_DATABASE:-laravel}
-            MYSQL_ROOT_PASSWORD: ${DB_PASSWORD:-root}
-            MYSQL_PASSWORD: ${DB_PASSWORD:-userpass}
-            MYSQL_USER: ${DB_USERNAME:-username}
+            MYSQL_DATABASE: ${DB_DATABASE}
+            MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+            MYSQL_PASSWORD: ${DB_PASSWORD}
+            MYSQL_USER: ${DB_USERNAME}
         volumes:
             - ./.docker/mysql/dbdata:/var/lib/mysql
         ports:
