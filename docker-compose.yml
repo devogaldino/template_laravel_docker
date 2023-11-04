@@ -1,13 +1,16 @@
 version: "3.7"
 
 services:
-    # image project
+    # php
     app:
         build:
             context: .
             dockerfile: Dockerfile
         restart: unless-stopped
         working_dir: /var/www/
+        environment:
+            SERVICE_NAME: app
+            SERVICE_TAGS: dev
         volumes:
             - ./:/var/www
         depends_on:
@@ -19,11 +22,11 @@ services:
     nginx:
         image: nginx:alpine
         restart: unless-stopped
-        ports:
-            - "8989:80"
         volumes:
             - ./:/var/www
             - ./docker/nginx/:/etc/nginx/conf.d/
+        ports:
+            - "8082:80"
         networks:
             - laravel
 
@@ -31,10 +34,10 @@ services:
     phpmyadmin:
         image: phpmyadmin:latest
         restart: unless-stopped
-        ports:
-            - "9000:80"
         environment:
             - PMA_ARBITRARY=1
+        ports:
+            - "8081:80"
         networks:
             - laravel
 
@@ -47,6 +50,8 @@ services:
             MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
             MYSQL_PASSWORD: ${DB_PASSWORD}
             MYSQL_USER: ${DB_USERNAME}
+            SERVICE_TAGS: dev
+            SERVICE_NAME: mysql
         volumes:
             - ./.docker/mysql/dbdata:/var/lib/mysql
         ports:
