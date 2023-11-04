@@ -3,7 +3,7 @@
 ### Passo a passo
 Clone Repositório
 ```sh
-git clone https://github.com/galdino01/template-laravel-docker.git
+git clone https://github.com/galdino01/template-laravel-docker.git --branch=stokki
 ```
 
 Copie os arquivos docker-compose.yml, Dockerfile e o diretório docker/ para o seu projeto
@@ -24,7 +24,7 @@ cp .env.example .env
 Atualize as variáveis de ambiente do arquivo .env
 ```dosini
 APP_NAME="APP NAME"
-APP_URL=http://localhost:8082
+APP_URL=http://localhost:8082/pt-br/stokki
 
 DB_CONNECTION=mysql
 DB_HOST=db
@@ -73,4 +73,4 @@ php artisan optimize
 
 
 Acessar o projeto
-[http://localhost:8082](http://localhost:8082)
+[http://localhost:8082/pt-br/stokki](http://localhost:8082/pt-br/stokki)
