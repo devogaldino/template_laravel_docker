@@ -1,3 +1,4 @@
+# Default
 /node_modules
 /public/hot
 /public/storage
@@ -14,3 +15,5 @@ yarn-error.log
 /.idea
 /.vscode
 /.docker
+
+# Stokki
