@@ -8,9 +8,6 @@ services:
             dockerfile: Dockerfile
         restart: unless-stopped
         working_dir: /var/www/
-        environment:
-            SERVICE_NAME: app
-            SERVICE_TAGS: dev
         volumes:
             - ./:/var/www
         depends_on:
