@@ -37,7 +37,7 @@ services:
         environment:
             - PMA_ARBITRARY=1
         ports:
-            - "8081:80"
+            - "9000:80"
         networks:
             - laravel
 
@@ -50,8 +50,6 @@ services:
             MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
             MYSQL_PASSWORD: ${DB_PASSWORD}
             MYSQL_USER: ${DB_USERNAME}
-            SERVICE_TAGS: dev
-            SERVICE_NAME: mysql
         volumes:
             - ./.docker/mysql/dbdata:/var/lib/mysql
         ports:
