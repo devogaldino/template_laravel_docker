@@ -15,27 +15,3 @@ yarn-error.log
 /.idea
 /.vscode
 /.docker
-
-# Stokki
-/node_modules
-laradock/
-laravel-echo-server.lock
-public/js/app/
-public/hot
-public/storage
-public/mix-manifest.json
-/storage/*.key
-/vendor
-.env
-.env.backup
-.phpunit.result.cache
-Homestead.json
-Homestead.yaml
-npm-debug.log
-yarn-error.log
-laravel-echo-server.json
-.package-lock.json
-.vscode
-*.zip
-*.code-workspace
-*.mwb
