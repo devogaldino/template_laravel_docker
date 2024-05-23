@@ -3,7 +3,7 @@
 ### Passo a passo
 Clone Repositório
 ```sh
-git clone https://github.com/galdino01/template-laravel-docker.git --branch=stokki
+git clone https://github.com/galdino01/template-laravel-docker.git --branch=main
 ```
 
 Copie os arquivos docker-compose.yml, Dockerfile e o diretório docker/ para o seu projeto
@@ -14,17 +14,15 @@ cp -rf template-laravel-docker/* app_name/
 cd app_name/
 ```
 
-
 Crie o Arquivo .env
 ```sh
 cp .env.example .env
 ```
 
-
 Atualize as variáveis de ambiente do arquivo .env
 ```dosini
 APP_NAME="APP NAME"
-APP_URL=http://localhost:8082/pt-br/stokki
+APP_URL=http://localhost:8989/pt-br/stokki
 
 DB_CONNECTION=mysql
 DB_HOST=db
@@ -42,24 +40,20 @@ REDIS_PASSWORD=null
 REDIS_PORT=6379
 ```
 
-
 Suba os containers do projeto
 ```sh
 docker-compose up -d
 ```
-
 
 Acessar o container
 ```sh
 docker-compose exec app bash
 ```
 
-
 Instalar as dependências do projeto
 ```sh
 composer install
 ```
-
 
 Gerar a key do projeto Laravel
 ```sh
@@ -71,6 +65,5 @@ Rodar os comandos artisan para limpar qualquer cache
 php artisan optimize
 ```
 
-
 Acessar o projeto
-[http://localhost:8082/pt-br/stokki](http://localhost:8082/pt-br/stokki)
+[http://localhost:8989/pt-br/stokki](http://localhost:8989/pt-br/stokki)
