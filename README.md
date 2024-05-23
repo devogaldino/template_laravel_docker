@@ -40,6 +40,11 @@ REDIS_PASSWORD=null
 REDIS_PORT=6379
 ```
 
+Caso precise alterar a versão do PHP, altere a linha seguinte no arquivo Dockerfile:
+```sh
+FROM php:7.4-fpm
+```
+
 Suba os containers do projeto
 ```sh
 docker-compose up -d
