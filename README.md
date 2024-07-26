@@ -22,7 +22,7 @@ cp .env.example .env
 Atualize as variáveis de ambiente do arquivo .env
 ```dosini
 APP_NAME="APP NAME"
-APP_URL=http://localhost:8989/pt-br/stokki
+APP_URL=http://localhost:8989/
 
 DB_CONNECTION=mysql
 DB_HOST=db
@@ -71,4 +71,4 @@ php artisan optimize
 ```
 
 Acessar o projeto
-[http://localhost:8989/pt-br/stokki](http://localhost:8989/pt-br/stokki)
+[http://localhost:8989/](http://localhost:8989/)
