@@ -1,4 +1,4 @@
-# Setup Docker Para Projetos Laravel
+# Setup Docker Para Projetos PHP + Laravel
 
 ### Passo a passo
 Clone Repositório
