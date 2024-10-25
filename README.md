@@ -3,7 +3,7 @@
 ### Passo a passo
 Clone Repositório
 ```sh
-git clone https://github.com/galdino01/template-laravel-docker.git --branch=main
+git clone https://github.com/galdino01/template_laravel_docker.git --branch=main
 ```
 
 Copie os arquivos docker-compose.yml, Dockerfile e o diretório docker/ para o seu projeto
