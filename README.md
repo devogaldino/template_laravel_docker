@@ -1,25 +1,42 @@
 # Setup Docker Para Projetos PHP + Laravel
 
+## Techs
+
+- PHP
+- Laravel
+- Mysql
+- Phpmyadmin
+- Redis
+- Mailhog
+
+##
+
 ### Passo a passo
-Clone Repositório
-```sh
+
+Clone Repositório:
+
+```bash
 git clone https://github.com/galdino01/template_laravel_docker.git --branch=main
 ```
 
-Copie os arquivos docker-compose.yml, Dockerfile e o diretório docker/ para o seu projeto
-```sh
+Copie os arquivos do template para o seu projeto:
+
+```bash
 cp -rf template-laravel-docker/* app_name/
 ```
-```sh
+
+```bash
 cd app_name/
 ```
 
-Crie o Arquivo .env
-```sh
+Crie o Arquivo .env:
+
+```bash
 cp .env.example .env
 ```
 
-Atualize as variáveis de ambiente do arquivo .env
+Atualize as variáveis de ambiente do arquivo .env:
+
 ```dosini
 APP_NAME="APP NAME"
 APP_URL=http://localhost:8989/
@@ -41,34 +58,37 @@ REDIS_PORT=6379
 ```
 
 Caso precise alterar a versão do PHP, altere a linha seguinte no arquivo Dockerfile:
-```sh
-FROM php:7.4-fpm
+
+```bash
+FROM php:7.4.33-fpm
 ```
 
-Suba os containers do projeto
-```sh
+Suba os containers do projeto:
+
+```bash
 docker-compose up -d
 ```
 
-Acessar o container
-```sh
+Acessar o container:
+
+```bash
 docker-compose exec app bash
 ```
 
-Instalar as dependências do projeto
-```sh
+Instalar as dependências do projeto:
+
+```bash
 composer install
 ```
 
-Gerar a key do projeto Laravel
-```sh
+Gerar a key do projeto:
+
+```bash
 php artisan key:generate
 ```
 
-Rodar os comandos artisan para limpar qualquer cache
-```sh
+Rodar os comandos artisan para limpar qualquer cache:
+
+```bash
 php artisan optimize
 ```
-
-Acessar o projeto
-[http://localhost:8989/](http://localhost:8989/)
