@@ -1,13 +1,13 @@
 services:
-    # php
+    # php app
     app:
         build:
             context: .
             dockerfile: Dockerfile
         restart: unless-stopped
-        working_dir: /var/www/
+        working_dir: /var/www/html/
         volumes:
-            - ./:/var/www
+            - ./:/var/www/html
         depends_on:
             - redis
         networks:
@@ -18,8 +18,8 @@ services:
         image: nginx:alpine
         restart: unless-stopped
         volumes:
-            - ./:/var/www
-            - ./docker/nginx/:/etc/nginx/conf.d/
+            - ./:/var/www/html
+            - ./docker/local/nginx/:/etc/nginx/conf.d/
         ports:
             - "8989:80"
         networks:
@@ -37,7 +37,7 @@ services:
             - laravel
 
     # db mysql
-    db:
+    mysql:
         image: mysql:5.7.22
         restart: unless-stopped
         environment:
@@ -46,9 +46,18 @@ services:
             MYSQL_PASSWORD: ${DB_PASSWORD}
             MYSQL_USER: ${DB_USERNAME}
         volumes:
-            - ./.docker/mysql/dbdata:/var/lib/mysql
+            - ./.docker/local/mysql/dbdata:/var/lib/mysql
         ports:
             - "3388:3306"
+        networks:
+            - laravel
+
+    # mailhog
+    mailhog:
+        image: mailhog/mailhog:latest
+        ports:
+            - "1025:1025"
+            - "8025:8025"
         networks:
             - laravel
 

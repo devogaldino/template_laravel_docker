@@ -1,4 +1,4 @@
-FROM php:7.4-fpm
+FROM php:7.4.33-fpm
 
 # set your user name, ex: user=carlos
 ARG user=galdino01
@@ -46,7 +46,7 @@ RUN pecl install -o -f redis \
     &&  docker-php-ext-enable redis
 
 # Set working directory
-WORKDIR /var/www
+WORKDIR /var/www/html
 
 # Copy custom configurations PHP
 COPY docker/php/custom.ini /usr/local/etc/php/conf.d/custom.ini
