@@ -99,7 +99,7 @@ O arquivo: ***setup***, agiliza os processos seguintes e mostra as url's locais,
 ./setup
 ```
 
-### - Se você optou por **NÃO** utilizar o arquivo: ***setup***, prossiga:
+### - Se você optou por **NÃO** utilizar o arquivo: ***setup***, prossiga no terminal, dentro do diretório do projeto:
 
 
 Suba os containers do projeto:
@@ -124,11 +124,6 @@ Zerar o banco
 
 ```bash
 php artisan migrate:fresh
-```
-
-Rodar os seeders
-```bash
-php artisan db:seed
 ```
 
 Gerar a key do projeto:
