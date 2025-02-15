@@ -142,3 +142,11 @@ Rodar os comandos artisan para limpar qualquer cache:
 ```bash
 php artisan optimize
 ```
+
+
+#
+
+
+> 
+> ### Você é livre para modificar esse projeto e deixa-lo do seu jeito, aproveite.
+>
