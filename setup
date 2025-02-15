@@ -1,0 +1,10 @@
+docker-compose up -dV --build
+docker-compose exec php composer install --no-scripts
+docker-compose exec php php artisan migrate:fresh
+docker-compose exec php php artisan db:seed
+
+echo "http://localhost:8080 (PHP)"
+echo "http://localhost:8978 (DBeaver)"
+echo "http://localhost:5540 (RedisInsight)"
+echo "http://localhost:8025 (Mailhog)"
+echo "http://localhost:9001 (Minio)"
